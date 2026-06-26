@@ -517,6 +517,28 @@
 
     .footer-copy { color: rgba(255,255,255,0.35); font-size: 0.8rem; }
 
+    /* HERO GALLERY STRIP */
+    .hero-gallery { display: flex; gap: 0.75rem; margin-top: 2rem; justify-content: center; flex-wrap: wrap; }
+    .hero-ba-pair { display: flex; gap: 0.5rem; border-radius: 10px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
+    .hero-ba-img { position: relative; }
+    .hero-ba-img img { width: 160px; height: 120px; object-fit: cover; display: block; }
+    .hero-ba-img span { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); color: #fff; font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; text-align: center; padding: 3px 0; }
+    .hero-ba-img.after-slot { width: 160px; height: 120px; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; flex-direction: column; color: rgba(255,255,255,0.4); font-size: 0.8rem; gap: 4px; }
+
+    /* GALLERY SECTION */
+    #gallery { background: var(--white); }
+    #gallery h2 { margin-bottom: 0.5rem; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(560px, 1fr)); gap: 2.5rem; margin-top: 2.5rem; }
+    .gallery-project { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .project-title { font-size: 1rem; font-weight: 700; padding: 1rem 1.25rem 0.75rem; color: var(--black); border-bottom: 1px solid rgba(0,0,0,0.07); }
+    .ba-pair { display: grid; grid-template-columns: 1fr 1fr; }
+    .ba-photo { position: relative; }
+    .ba-photo img { width: 100%; height: 260px; object-fit: cover; display: block; }
+    .ba-label { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.72); color: #fff; font-size: 0.7rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; }
+    .ba-label.after { background: var(--green); }
+    .after-placeholder { width: 100%; height: 260px; background: #f0f0ec; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; color: #aaa; font-size: 0.85rem; }
+    .after-placeholder span { font-size: 2rem; }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
       .nav-links { display: none; }
@@ -524,6 +546,10 @@
       .form-row { grid-template-columns: 1fr; }
       .why-highlights { grid-template-columns: 1fr; }
       .footer-inner { flex-direction: column; text-align: center; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .ba-pair { grid-template-columns: 1fr; }
+      .ba-photo img, .after-placeholder { height: 220px; }
+      .hero-ba-img img, .hero-ba-img.after-slot { width: 130px; height: 100px; }
     }
   </style>
 </head>
@@ -537,6 +563,7 @@
   </div>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
     <li><a href="#why">About</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -570,6 +597,14 @@
       <div class="stat-badge">
         <span class="stat-value">100%</span>
         <span class="stat-label">Satisfaction Guaranteed</span>
+      </div>
+    </div>
+    <!-- HERO BEFORE/AFTER STRIP -->
+    <div class="hero-gallery">
+      <div style="text-align:center;color:rgba(255,255,255,0.7);font-size:0.8rem;font-weight:600;letter-spacing:0.5px;margin-bottom:0.25rem;width:100%;">✂ Real Results — Before &amp; After</div>
+      <div class="hero-ba-pair">
+        <div class="hero-ba-img"><img src="before1.jpg" alt="Before - Planter job"><span>Before</span></div>
+        <div class="hero-ba-img after-slot"><span>📸</span>After</div>
       </div>
     </div>
   </div>
@@ -612,6 +647,37 @@
         <a href="#contact" class="btn-primary" style="margin-top:2rem;display:inline-flex;">Support Local Students →</a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <p class="section-label">📸 Our Work</p>
+    <h2>Before &amp; After</h2>
+    <p class="section-sub">Every yard we touch gets the same care and attention to detail. See the transformations for yourself.</p>
+    <div class="gallery-grid">
+
+      <!-- Project 1: Planter & Pathway -->
+      <div class="gallery-project">
+        <div class="project-title">Planter &amp; Pathway Cleanup — Seattle</div>
+        <div class="ba-pair">
+          <div class="ba-photo">
+            <img src="before1.jpg" alt="Before - Planter and pathway cleanup">
+            <div class="ba-label">Before</div>
+          </div>
+          <div class="ba-photo">
+            <div class="after-placeholder">
+              <span>📸</span>
+              After photo coming soon
+            </div>
+            <div class="ba-label after">After</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p style="text-align:center;margin-top:2rem;color:rgba(0,0,0,0.4);font-size:0.85rem;">More project photos added regularly — check back soon!</p>
   </div>
 </section>
 
@@ -868,6 +934,7 @@
     <div class="footer-logo">Rainier <em>Landscaping</em> · Seattle, WA</div>
     <ul class="footer-links">
       <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#why">About</a></li>
       <li><a href="#areas">Areas</a></li>
       <li><a href="#contact">Contact</a></li>
